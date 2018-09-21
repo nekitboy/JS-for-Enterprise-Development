@@ -7,7 +7,7 @@ const outputDirectory = 'dist';
 module.exports = {
     mode: 'development',
     entry: {
-        defaultapp: ['./stub/js/script.js']
+        defaultapp: ['./src/js/index.js']
     },
     output: {
         path: path.join(__dirname, outputDirectory),
@@ -19,7 +19,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "My App",
             hash: true,
-            template: "stub/index.html"
+            template: "src/index.html"
         })
     ],
     devServer: {
