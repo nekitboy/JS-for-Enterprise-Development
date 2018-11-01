@@ -7,7 +7,7 @@ const outputDirectory = 'dist';
 module.exports = {
     mode: 'development',
     entry: {
-        defaultapp: ['./src/js/index.js']
+        defaultapp: ['./src/index.jsx']
     },
     output: {
         path: path.join(__dirname, outputDirectory),
@@ -19,7 +19,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "My App",
             hash: true,
-            template: "src/index.html"
+            template: "stub/index.html"
         })
     ],
     devServer: {
@@ -37,16 +37,15 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
+                    loader: 'babel-loader'
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.json', '.jsx']
     }
-
 };
