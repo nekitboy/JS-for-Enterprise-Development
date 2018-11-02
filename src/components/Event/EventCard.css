@@ -1,0 +1,8 @@
+.event-card {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.event-card:hover {
+    background: ghostwhite;
+}
