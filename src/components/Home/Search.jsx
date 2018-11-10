@@ -11,7 +11,7 @@ export class Search extends React.Component {
                 <Field name='title_s' component={AdaptedTextField} className={'input'} margin='normal' label='Поиск' placeholder='Введите название мероприятия для поиска' InputLabelProps={{
                     shrink: true,
                 }}/>
-                <Field name='date_s' component={AdaptedTextField} className={'input'} onBlur={(e) => {e.preventDefault()}} onFocus={(e) => {e.preventDefault()}} type={'date'} label='Дата' InputLabelProps={{
+                <Field name='date_s' component={AdaptedTextField} className={'input'} type={'date'} label='Дата' InputLabelProps={{
                     shrink: true,
                 }} margin='normal' />
             </form>

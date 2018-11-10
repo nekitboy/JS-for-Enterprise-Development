@@ -3,7 +3,7 @@
   "description": "Project on JSED course (Web Application)",
   "main": "src/js/index.js",
   "scripts": {
-    "dev": "set MODE=development&& nodemon ./startServer.js",
+    "dev": "set MODE=development&& set API=MOCK&&  nodemon ./startServer.js",
     "server": "webpack-dev-server --open",
     "build": "webpack",
     "prod": "webpack --mode production"
