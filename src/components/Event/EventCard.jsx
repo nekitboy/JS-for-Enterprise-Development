@@ -80,7 +80,7 @@ EventCard.propTypes = {
     event: PropTypes.object.isRequired
 }
 
-function format(dateStart, dateEnd) {
+export const format = (dateStart, dateEnd) => {
     if (dateStart.getTime() === dateEnd.getTime())
         return dateStart.toLocaleString('ru', {weekday: 'short', day: '2-digit', month: 'long', hour: '2-digit', minute: '2-digit'})
     else if (dateEnd.getTime() - dateStart.getTime() <= 1000*60*60*24)

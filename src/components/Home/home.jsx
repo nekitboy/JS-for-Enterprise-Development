@@ -6,6 +6,7 @@ import {LinearProgress} from '@material-ui/core'
 import "./home.css"
 import {loadEvent, resetEventNext} from "../../store/actions";
 import Search from "./Search";
+import Loader from "./loader"
 
 export class HomePage extends React.Component {
 
@@ -43,7 +44,7 @@ export class HomePage extends React.Component {
             <React.Fragment>
                 <div className="sticky">
                     <Search/>
-                    {this.props.eventsIsLoading && <LinearProgress color={'secondary'}/>}
+                    {this.props.eventsIsLoading && <Loader/>}
                     {this.props.eventsLoadingFailed && <div>Ой-ой :(</div>}
                 </div>
                 <div className="event-layout" >
