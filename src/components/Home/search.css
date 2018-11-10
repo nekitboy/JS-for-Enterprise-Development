@@ -1,0 +1,12 @@
+.input{
+    vertical-align: bottom !important;
+}
+
+.input:first-child {
+    margin-right: 40px !important;
+    width: calc(100% - 250px);
+}
+
+.input:last-child {
+    width: 150px;
+}

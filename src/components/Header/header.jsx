@@ -13,7 +13,7 @@ const Header = () => (
             </Link>
             <Button className={'about'} component={Link} to={"/about"}>О нас</Button>
             <div className="location">
-                <span className="city">Казань</span>
+                <span className="city">Москва</span>
                 <span className="location-ic" />
             </div>
         </div>

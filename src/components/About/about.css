@@ -1,0 +1,23 @@
+.about {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+}
+
+.about h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+.about strong {
+    font-weight: bolder;
+    color: #af0e0e;
+}
