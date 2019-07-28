@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack')
 const development = process.env.MODE === 'development'
+const API_URL = process.env.API
 
 const outputDirectory = 'dist';
 
@@ -29,6 +31,9 @@ module.exports = {
             // both options are optional
             filename: "css/style.css",
             chunkFilename: "[id].css"
+        }),
+        new webpack.DefinePlugin({
+            'API_URL': JSON.stringify(API_URL)
         })
     ],
     devServer: {

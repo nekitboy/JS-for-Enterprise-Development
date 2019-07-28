@@ -35,7 +35,7 @@ export class EventCard extends React.Component{
                             <p>Даты:</p>
                             {this.props.event.dates.map((date) => {
                                 if (this.datecount < 3 && (date.start >= this.props.since && date.start < this.props.until ||
-                                    date.end >= this.props.since && date.end < this.props.until)) {
+                                    date.end >= this.props.since && date.end < this.props.until) || date.start < 0) {
                                     this.datecount++
 
                                     let start = new Date(date.start*1000)
@@ -80,7 +80,7 @@ EventCard.propTypes = {
     event: PropTypes.object.isRequired
 }
 
-function format(dateStart, dateEnd) {
+export const format = (dateStart, dateEnd) => {
     if (dateStart.getTime() === dateEnd.getTime())
         return dateStart.toLocaleString('ru', {weekday: 'short', day: '2-digit', month: 'long', hour: '2-digit', minute: '2-digit'})
     else if (dateEnd.getTime() - dateStart.getTime() <= 1000*60*60*24)
@@ -90,14 +90,16 @@ function format(dateStart, dateEnd) {
             dateEnd.toLocaleString('ru', {day: '2-digit', month: 'long'}) + ', ' +
             dateStart.toLocaleString('ru', {hour: '2-digit', minute: '2-digit'}) + '-' +
             dateEnd.toLocaleString('ru', {hour: '2-digit', minute: '2-digit'});
+    else if (dateStart.getTime() < 0)
+        return 'Круглый год'
     else
         return dateStart.toLocaleString('ru', {day: '2-digit', month: 'long'}) + ' - ' +
             dateEnd.toLocaleString('ru', {day: '2-digit', month: 'long'});
 }
 
 const mapStateToProps = (state) => ({
-    since: state.events.since,
-    until: state.events.until
+    since: state.app.events.since,
+    until: state.app.events.until
 });
 
 const mapDispatchToProps = (dispatch) => ({

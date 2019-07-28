@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import {Provider} from "react-redux"
 import {store} from "./store/store";
+import NotFound from "./components/404/404"
 
 import "./main.css"
 import 'typeface-roboto'
@@ -19,7 +20,7 @@ const App = () => (
             <Route exact path="/" component={HomePage} />
             <Route path={"/event/:id"} component={EventDetailed} />
             <Route path={"/about"} component={About} />
-            <Route render={() => (<div>Page not found</div>)}/>
+            <Route component={NotFound}/>
         </Switch>
     </React.Fragment>
 );
